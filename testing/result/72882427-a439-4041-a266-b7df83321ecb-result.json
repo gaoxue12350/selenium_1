@@ -1,0 +1,58 @@
+{
+  "name": "test_add[fraction]",
+  "status": "passed",
+  "parameters": [
+    {
+      "name": "a",
+      "value": "0.1"
+    },
+    {
+      "name": "b",
+      "value": "0.1"
+    },
+    {
+      "name": "expect",
+      "value": "0.2"
+    }
+  ],
+  "start": 1603260494997,
+  "stop": 1603260494997,
+  "uuid": "0985fd4e-4a28-43e6-b5b0-8fe35dea5944",
+  "historyId": "24d0b14bf47e7ef1ab1957a22dc67989",
+  "testCaseId": "a7b29b08300809261dc069b49da8543b",
+  "fullName": "test_calc.TestCalc#test_add",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "run(order=0)"
+    },
+    {
+      "name": "suite",
+      "value": "test_calc"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestCalc"
+    },
+    {
+      "name": "host",
+      "value": "gaoxuedeMacBook-Air.local"
+    },
+    {
+      "name": "thread",
+      "value": "16314-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test_calc"
+    }
+  ]
+}

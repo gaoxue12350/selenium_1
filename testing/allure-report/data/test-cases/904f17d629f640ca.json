@@ -1,0 +1,137 @@
+{
+  "uid": "904f17d629f640ca",
+  "name": "test_mul[minus_double]",
+  "fullName": "test_calc.TestCalc#test_mul",
+  "historyId": "909934ad4c734e8c46679f943588cb3b",
+  "time": {
+    "start": 1603260495122,
+    "stop": 1603260495122,
+    "duration": 0
+  },
+  "status": "passed",
+  "flaky": false,
+  "newFailed": false,
+  "beforeStages": [
+    {
+      "name": "get_calc",
+      "time": {
+        "start": 1603260494977,
+        "stop": 1603260494977,
+        "duration": 0
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "stepsCount": 0,
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "hasContent": false
+    }
+  ],
+  "testStage": {
+    "status": "passed",
+    "steps": [],
+    "attachments": [
+      {
+        "uid": "11a38b81cf27c987",
+        "name": "stdout",
+        "source": "11a38b81cf27c987.txt",
+        "type": "text/plain",
+        "size": 13
+      }
+    ],
+    "parameters": [],
+    "stepsCount": 0,
+    "attachmentsCount": 1,
+    "shouldDisplayMessage": false,
+    "hasContent": true
+  },
+  "afterStages": [
+    {
+      "name": "get_calc::0",
+      "time": {
+        "start": 1603260495125,
+        "stop": 1603260495125,
+        "duration": 0
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "stepsCount": 0,
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "hasContent": false
+    }
+  ],
+  "labels": [
+    {
+      "name": "tag",
+      "value": "run(order=-1)"
+    },
+    {
+      "name": "suite",
+      "value": "test_calc"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestCalc"
+    },
+    {
+      "name": "host",
+      "value": "gaoxuedeMacBook-Air.local"
+    },
+    {
+      "name": "thread",
+      "value": "16314-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test_calc"
+    },
+    {
+      "name": "resultFormat",
+      "value": "allure2"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "a",
+      "value": "-1"
+    },
+    {
+      "name": "b",
+      "value": "-1"
+    },
+    {
+      "name": "expect",
+      "value": "1"
+    }
+  ],
+  "links": [],
+  "hidden": false,
+  "retry": false,
+  "extra": {
+    "severity": "normal",
+    "retries": [],
+    "categories": [],
+    "tags": [
+      "run(order=-1)"
+    ]
+  },
+  "source": "904f17d629f640ca.json",
+  "parameterValues": [
+    "-1",
+    "-1",
+    "1"
+  ]
+}

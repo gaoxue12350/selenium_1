@@ -1,0 +1,119 @@
+{
+  "uid": "47ffcf9e121a2fe",
+  "name": "test_sub[bugint]",
+  "fullName": "test_calc.TestCalc#test_sub",
+  "historyId": "abfff012f79b8612bb88915fb8dec4c5",
+  "time": {
+    "start": 1603260495083,
+    "stop": 1603260495083,
+    "duration": 0
+  },
+  "status": "passed",
+  "flaky": false,
+  "newFailed": false,
+  "beforeStages": [
+    {
+      "name": "get_calc",
+      "time": {
+        "start": 1603260494977,
+        "stop": 1603260494977,
+        "duration": 0
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "stepsCount": 0,
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "hasContent": false
+    }
+  ],
+  "afterStages": [
+    {
+      "name": "get_calc::0",
+      "time": {
+        "start": 1603260495125,
+        "stop": 1603260495125,
+        "duration": 0
+      },
+      "status": "passed",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "stepsCount": 0,
+      "attachmentsCount": 0,
+      "shouldDisplayMessage": false,
+      "hasContent": false
+    }
+  ],
+  "labels": [
+    {
+      "name": "tag",
+      "value": "run(order=2)"
+    },
+    {
+      "name": "suite",
+      "value": "test_calc"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestCalc"
+    },
+    {
+      "name": "host",
+      "value": "gaoxuedeMacBook-Air.local"
+    },
+    {
+      "name": "thread",
+      "value": "16314-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test_calc"
+    },
+    {
+      "name": "resultFormat",
+      "value": "allure2"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "a",
+      "value": "100"
+    },
+    {
+      "name": "b",
+      "value": "50"
+    },
+    {
+      "name": "expect",
+      "value": "50"
+    }
+  ],
+  "links": [],
+  "hidden": false,
+  "retry": false,
+  "extra": {
+    "severity": "normal",
+    "retries": [],
+    "categories": [],
+    "tags": [
+      "run(order=2)"
+    ]
+  },
+  "source": "47ffcf9e121a2fe.json",
+  "parameterValues": [
+    "100",
+    "50",
+    "50"
+  ]
+}

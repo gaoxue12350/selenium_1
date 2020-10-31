@@ -1,0 +1,58 @@
+{
+  "name": "test_div[int]",
+  "status": "passed",
+  "parameters": [
+    {
+      "name": "a",
+      "value": "1"
+    },
+    {
+      "name": "b",
+      "value": "1"
+    },
+    {
+      "name": "expect",
+      "value": "1"
+    }
+  ],
+  "start": 1603260495000,
+  "stop": 1603260495000,
+  "uuid": "2fa9bece-e8cf-4ccc-acb4-51be045c7b8d",
+  "historyId": "1ce736627a73f5e27447ae370d934512",
+  "testCaseId": "4a57f615ae930c12d705a9fc7a66b88d",
+  "fullName": "test_calc.TestCalc#test_div",
+  "labels": [
+    {
+      "name": "tag",
+      "value": "run(order=1)"
+    },
+    {
+      "name": "suite",
+      "value": "test_calc"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestCalc"
+    },
+    {
+      "name": "host",
+      "value": "gaoxuedeMacBook-Air.local"
+    },
+    {
+      "name": "thread",
+      "value": "16314-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "test_calc"
+    }
+  ]
+}
