@@ -24,6 +24,7 @@ class AddressListPage(BasePage):
         return PersonalInfoPage(self.driver)
 
     def find_member(self, name):
+        #寻找成员，能找到返回True，找不到返回False
         result = True
         self.find_and_click(MobileBy.ID, 'com.tencent.wework:id/hxw')
         self.find(MobileBy.XPATH, '//*[@text="搜索"]').send_keys(name)
