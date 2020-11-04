@@ -3,9 +3,8 @@ from appium import webdriver
 from appium.webdriver.common.mobileby import MobileBy
 from selenium.webdriver.support.wait import WebDriverWait
 
-
 class TestDemo:
-    def setup(self):
+    def setup_class(self):
         caps = {}
         caps["platformName"] = "Android"
         caps["deviceName"] = "hogwarts"
@@ -13,8 +12,22 @@ class TestDemo:
         caps["appActivity"] = ".launch.LaunchSplashActivity"
         caps["noReset"] = "True"  # 不重置当前状态
         # caps["settings[waitForIdleTimeout]"] = 0   #动态页面的时间设置
+        caps['skipDeviceInitialization']='true'
+        caps['skipSeverInstallation']='true'
+        caps['dontStopAppOnReset']='true'
         self.driver = webdriver.Remote("http://localhost:4723/wd/hub", caps)
         self.driver.implicitly_wait(5)
+
+    def teardown(self):
+        self.driver.back()
+
+    def test_a(self):
+        self.driver.find_element(MobileBy.XPATH,'//*[@text="通讯录"]').click()
+        self.driver.find_element(MobileBy.ANDROID_UIAUTOMATOR,
+                                 'new UiScrollable(new UiSelector()\
+                                 .scrollable(true).instance(0))\
+                                 .scrollIntoView(new UiSelector()\
+                                 .text("添加成员").instance(0));').click()
 
     def test_daka(self):
         self.driver.find_element(MobileBy.XPATH, '//*[@text="工作台"]').click()
@@ -31,5 +44,5 @@ class TestDemo:
         # assert "外出打卡成功" in self.driver.page_source
         WebDriverWait(self.driver, 10).until(lambda x: "外出打卡成功" in x.page_source)
 
-    def teardown(self):
+    def teardown_class(self):
         self.driver.quit()
