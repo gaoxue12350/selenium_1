@@ -1,0 +1,16 @@
+caps:
+  platformName: android
+  deviceName: test1
+  appPackage: com.xueqiu.android
+  appActivity: .view.WelcomeActivityAlias
+  noReset: true
+  skipDeviceInitialization: true
+  skipServerInstallation: true
+
+server:
+  ip: localhost
+  port: 4723
+
+#黑名单
+black_list:
+  - !!python/tuple ['xpath', "//*[@resource-id='com.xueqiu.android:id/iv_close']"]
