@@ -11,7 +11,7 @@ def handle_black(func):
             instance.error_num=0
             return  result
         except Exception as e:
-            #截图功能15-18
+            #截图功能15-18行代码
             instance.driver.save_screenshot("tmp.png")
             with open("tmp.png","rb") as f:
                 content=f.read()
