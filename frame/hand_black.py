@@ -1,3 +1,6 @@
+import allure
+
+
 def handle_black(func):
     def wrapper(*args,**kwargs):
         #传类中函数时，传进来的第一个值是self
@@ -8,6 +11,10 @@ def handle_black(func):
             instance.error_num=0
             return  result
         except Exception as e:
+            instance.driver.save_screenshot("tmp.png")
+            with open("tmp.png","rb") as f:
+                content=f.read()
+            allure.attach(content,attachment_type=allure.attachment_type.PNG)
             if instance.error_num>instance.max_num:
                 raise e
             instance.error_num+=1
