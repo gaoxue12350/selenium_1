@@ -19,9 +19,9 @@ class TestTag:
         for tag_id in tag_id_later:
             if tag_id not in self.tag_id_origion:
                 self.tag.delete(tag_id)
-        for tag_name in self.tag_name_origion:
-            if tag_name not in tag_id_later:
-                self.tag.add(tag_name)
+        # for tag_name in self.tag_name_origion:
+        #     if tag_name not in tag_id_later:
+        #         self.tag.add(tag_name)
 
     #更新标签
     @pytest.mark.parametrize("tag_id,tag_name",[
