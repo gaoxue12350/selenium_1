@@ -14,7 +14,7 @@ class Tag(BaseApi):
         data={
             'method':'post',
             'url':'https://qyapi.weixin.qq.com/cgi-bin/externalcontact/get_corp_tag_list',
-            'params':{'access_token': self.token},
+            'params':{'access_token': self.token_tag},
             'json':{'tag_id': []}
         }
         # r = requests.post(
@@ -30,7 +30,7 @@ class Tag(BaseApi):
         data={
             'method':'post',
             'url':'https://qyapi.weixin.qq.com/cgi-bin/externalcontact/edit_corp_tag',
-            'params':{'access_token': self.token},
+            'params':{'access_token': self.token_tag},
             'json':{"id": id,"name": tag_name}
         }
         # r = requests.post('https://qyapi.weixin.qq.com/cgi-bin/externalcontact/edit_corp_tag',
@@ -70,7 +70,7 @@ class Tag(BaseApi):
         data={
             'method':'post',
             'url':'https://qyapi.weixin.qq.com/cgi-bin/externalcontact/add_corp_tag',
-            'params':{'access_token': self.token},
+            'params':{'access_token': self.token_tag},
             'json':{"group_name": group_name,
                     "tag": tag,
                     **kwargs
@@ -116,7 +116,7 @@ class Tag(BaseApi):
         data={
             'method':'post',
             'url':'https://qyapi.weixin.qq.com/cgi-bin/externalcontact/del_corp_tag',
-            'params':{'access_token': self.token},
+            'params':{'access_token': self.token_tag},
             'json':{"group_id": group_id}
         }
         # r=requests.post('https://qyapi.weixin.qq.com/cgi-bin/externalcontact/del_corp_tag',
@@ -130,7 +130,7 @@ class Tag(BaseApi):
         data = {
             'method': 'post',
             'url': 'https://qyapi.weixin.qq.com/cgi-bin/externalcontact/del_corp_tag',
-            'params': {'access_token': self.token},
+            'params': {'access_token': self.token_tag},
             'json': {"tag_id": tag_id}
         }
         # r=requests.post('https://qyapi.weixin.qq.com/cgi-bin/externalcontact/del_corp_tag',
