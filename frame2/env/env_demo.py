@@ -1,7 +1,6 @@
 import requests
 import yaml
 
-
 class Api:
     with open('env.yaml') as f:
         env=yaml.safe_load(f)

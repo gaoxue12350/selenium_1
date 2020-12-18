@@ -1,6 +1,5 @@
 from frame2.env.env_demo import Api
 
-
 class TestApi:
     data = {
         'method': 'get',
