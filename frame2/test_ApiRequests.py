@@ -1,6 +1,5 @@
 from frame2.test_requests import ApiRequest
 
-
 class TestApiRequest:
     # req_data = {
     #     "method": "get",
