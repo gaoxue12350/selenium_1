@@ -8,11 +8,17 @@ from service.base_api import BaseApi
 
 
 class Contact(BaseApi):
+    corpid = 'ww082c54990645602b'
+    corpsecret = '-4FqwCQdtQymn2g7EBhgsmgdDKC7lyFkYMLM2X15UyY'
+
+    def __init__(self):
+        self.token=self.get_token(self.corpid,self.corpsecret)
+
     #创建成员
     def create_member(self,userid,name,mobile,department):
         data={'method':'post',
               'url':'https://qyapi.weixin.qq.com/cgi-bin/user/create',
-              'params':{'access_token':self.token_contact},
+              'params':{'access_token':self.token},
               'json':{"userid": userid,
                        "name": name,
                        "mobile": mobile,
@@ -57,7 +63,7 @@ class Contact(BaseApi):
         data={
             'method':'get',
             'url':'https://qyapi.weixin.qq.com/cgi-bin/user/get',
-            'params':{'access_token':self.token_contact,
+            'params':{'access_token':self.token,
                       'userid':userid}
                       }
         r=self.send(data)
@@ -76,7 +82,7 @@ class Contact(BaseApi):
         data={
             'method':'post',
             'url':'https://qyapi.weixin.qq.com/cgi-bin/user/update',
-            'params':{'access_token':self.token_contact},
+            'params':{'access_token':self.token},
             'json':{"userid": userid,
                     "name": name
             }
@@ -89,7 +95,7 @@ class Contact(BaseApi):
         data={
             'method':'get',
             'url':'https://qyapi.weixin.qq.com/cgi-bin/user/delete',
-            'params':{'access_token':self.token_contact,
+            'params':{'access_token':self.token,
                       'userid':userid},
         }
         r=self.send(data)
@@ -110,7 +116,7 @@ class Contact(BaseApi):
         data={
             'method':'get',
             'url':'https://qyapi.weixin.qq.com/cgi-bin/user/simplelist',
-            'params':{'access_token':self.token_contact,
+            'params':{'access_token':self.token,
                       'department_id':department_id
                       }
         }
@@ -122,7 +128,7 @@ class Contact(BaseApi):
         data={
             'method':'get',
             'url':'https://qyapi.weixin.qq.com/cgi-bin/user/list',
-            'params':{'access_token':self.token_contact,
+            'params':{'access_token':self.token,
                       'department_id':department_id
                       }
         }
