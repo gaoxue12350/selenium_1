@@ -4,14 +4,14 @@ import requests
 
 
 class BaseApi:
-    def __init__(self):
-        self.token_tag=self.get_token_tag()
-        self.token_contact=self.get_token_contact()
+
+
+    # def __init__(self):
+    #     self.token_tag=self.get_token(self.corpid,self.corpsecret)
+        # self.token_contact=self.get_token_contact()
 
     # 获取token
-    def get_token_tag(self):
-        corpid = 'ww082c54990645602b'
-        corpsecret = 'oVl-ssXZiKT_KqEi3AnoPyeBBzLYsWsV7NVBJLb6zew'
+    def get_token(self,corpid,corpsecret):
         data={
             'method':'get',
             'url':'https://qyapi.weixin.qq.com/cgi-bin/gettoken',
@@ -26,17 +26,17 @@ class BaseApi:
         token = r.json()['access_token']
         return token
 
-    def get_token_contact(self):
-        corpid = 'ww082c54990645602b'
-        corpsecret = '-4FqwCQdtQymn2g7EBhgsmgdDKC7lyFkYMLM2X15UyY'
-        data={
-            'method':'get',
-            'url':'https://qyapi.weixin.qq.com/cgi-bin/gettoken',
-            'params':{'corpid': corpid, 'corpsecret': corpsecret}
-        }
-        r=self.send(data)
-        token = r.json()['access_token']
-        return token
+    # def get_token_contact(self):
+    #     corpid = 'ww082c54990645602b'
+    #     corpsecret = '-4FqwCQdtQymn2g7EBhgsmgdDKC7lyFkYMLM2X15UyY'
+    #     data={
+    #         'method':'get',
+    #         'url':'https://qyapi.weixin.qq.com/cgi-bin/gettoken',
+    #         'params':{'corpid': corpid, 'corpsecret': corpsecret}
+    #     }
+    #     r=self.send(data)
+    #     token = r.json()['access_token']
+    #     return token
 
     def send(self,kwargs):
         r=requests.request(**kwargs)

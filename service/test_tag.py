@@ -10,8 +10,14 @@ class TestTag:
     def setup(self):
         self.tag = Tag()
 
+    #删除标签组
+    def test_delete_and_detect_group(self):
+        r=self.tag.delete_and_detect_group(['etMoQQDQAACquqZ5jT9KwvfE10T46GYQ'])
+        print(r.json(),type(r.json()))
+        assert r.json()['errcode']==0
+
     #更新标签
-    @pytest.mark.skip(reason='skip')
+    # @pytest.mark.skip(reason='skip')
     @pytest.mark.parametrize("tag_id,tag_name",[
         ('etMoQQDQAAu47atKWLSSXFVYmy8doqiA', 'tag1_new_'),
         ('etMoQQDQAAu47atKWLSSXFVYmy8doqiA', 'tag1_中文'),
@@ -26,7 +32,8 @@ class TestTag:
         r=self.tag.update(id=tag_id,
                      tag_name=tag_name)
         r=self.tag.list()
-        print(type(jsonpath(r.json(),f"$..[?(@.name=='{tag_name}')]")))
+        print(r.json(),type(r.json()))
+        # print(type(jsonpath(r.json(),f"$..[?(@.name=='{tag_name}')]")))
         assert jsonpath(r.json(), f"$..[?(@.name=='{tag_name}')]")[0]['name'] == tag_name
         # tags=[tag
         #       for group in r.json()['tag_group'] if group['group_name'] == group_name
@@ -85,10 +92,7 @@ class TestTag:
         # print(jsonpath(r.json(),f"$..[?(@.id=='etMoQQDQAAq6lttsvB49lm2bnXI-5TTQ')]"))
         # assert not (jsonpath(r.json(),f"$..[?(@.id=={tag_id})]"))
 
-    #删除标签组
-    def test_delete_and_detect_group(self):
-        r=self.tag.delete_and_detect_group(['etMoQQDQAACquqZ5jT9KwvfE10T46GYQ'])
-        assert r.json()['errcode']==0
+
 
     # @pytest.mark.skip(reason='skip')
     def test_tag_delete(self):

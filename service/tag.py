@@ -6,15 +6,19 @@ from service.base_api import BaseApi
 
 class Tag(BaseApi):
 
+    corpid = 'ww082c54990645602b'
+    corpsecret = 'oVl-ssXZiKT_KqEi3AnoPykDAZ5zruO9qUMgFm3_kqs'
+
     def __init__(self):
-        super().__init__()
+        self.token=self.get_token(self.corpid,self.corpsecret)
+        # super().__init__()
 
     # 获取标签
     def list(self):
         data={
             'method':'post',
             'url':'https://qyapi.weixin.qq.com/cgi-bin/externalcontact/get_corp_tag_list',
-            'params':{'access_token': self.token_tag},
+            'params':{'access_token': self.token},
             'json':{'tag_id': []}
         }
         # r = requests.post(
@@ -22,7 +26,7 @@ class Tag(BaseApi):
         #     params={'access_token': self.token},
         #     json={'tag_id': []})
         r=self.send(data)
-        print(json.dumps(r.json(),ensure_ascii=False, indent=2))
+        # print(json.dumps(r.json(),ensure_ascii=False, indent=2))
         return r
 
     #更新标签
@@ -30,7 +34,7 @@ class Tag(BaseApi):
         data={
             'method':'post',
             'url':'https://qyapi.weixin.qq.com/cgi-bin/externalcontact/edit_corp_tag',
-            'params':{'access_token': self.token_tag},
+            'params':{'access_token': self.token},
             'json':{"id": id,"name": tag_name}
         }
         # r = requests.post('https://qyapi.weixin.qq.com/cgi-bin/externalcontact/edit_corp_tag',
@@ -70,7 +74,7 @@ class Tag(BaseApi):
         data={
             'method':'post',
             'url':'https://qyapi.weixin.qq.com/cgi-bin/externalcontact/add_corp_tag',
-            'params':{'access_token': self.token_tag},
+            'params':{'access_token': self.token},
             'json':{"group_name": group_name,
                     "tag": tag,
                     **kwargs
@@ -116,7 +120,7 @@ class Tag(BaseApi):
         data={
             'method':'post',
             'url':'https://qyapi.weixin.qq.com/cgi-bin/externalcontact/del_corp_tag',
-            'params':{'access_token': self.token_tag},
+            'params':{'access_token': self.token},
             'json':{"group_id": group_id}
         }
         # r=requests.post('https://qyapi.weixin.qq.com/cgi-bin/externalcontact/del_corp_tag',
@@ -130,7 +134,7 @@ class Tag(BaseApi):
         data = {
             'method': 'post',
             'url': 'https://qyapi.weixin.qq.com/cgi-bin/externalcontact/del_corp_tag',
-            'params': {'access_token': self.token_tag},
+            'params': {'access_token': self.token},
             'json': {"tag_id": tag_id}
         }
         # r=requests.post('https://qyapi.weixin.qq.com/cgi-bin/externalcontact/del_corp_tag',
@@ -209,3 +213,4 @@ class Tag(BaseApi):
                     if j in x['name']:
                         group_id1.append(i['group_id'])
         return group_id1[0]
+
