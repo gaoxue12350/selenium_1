@@ -3,7 +3,7 @@ import yaml
 
 
 class Api:
-    with open('env.yml') as f:
+    with open('env.yaml') as f:
         env=yaml.safe_load(f)
 
     def send(self,data:dict):
